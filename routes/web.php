@@ -1,0 +1,13 @@
+<?php
+use App\Http\Controllers\TaskController;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/halaman2', function () {
+    return view('halo');
+});
+Route::get('/tasks', [TaskController::class, 'index']);
+Route::post('/tasks', [TaskController::class, 'store']);
